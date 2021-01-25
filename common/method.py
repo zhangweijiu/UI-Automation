@@ -21,7 +21,7 @@ def search_func(driver, url, username, password,key):
     id_frame = id_li + "-frame"
     driver.switch_to.frame(id_frame) #切换到子html页面
     # driver.switch_to.frame(driver.find_element_by_xpath("//iframe[@id='{}']".format(id_frame)))
-    driver.find_element_by_id(id_frame).send_keys(key) # 在“查询单号”搜索框中键入要查询的内容
+    driver.find_element_by_id("searchNumber").send_keys(key) # 在“查询单号”搜索框中键入要查询的内容
     driver.find_element_by_id("searchBtn").click() # 点击“查询”按键
     time.sleep(1)
     num = driver.find_element_by_xpath("//tr[@id='datagrid-row-r1-2-0']//td[@field='number']//div").text # 获取查询到的单号的值
